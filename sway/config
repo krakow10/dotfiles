@@ -1,0 +1,159 @@
+#exec waybar
+
+set $mod Alt
+
+# Application Launcher
+bindsym $mod+r exec tofi-drun | xargs swaymsg exec --
+
+# Xwayland
+xwayland enable
+
+# Wallpaper
+output DP-1 bg /home/quat/Pictures/Backgrounds/HighResScreenshot20190331-062955.png fill
+output DP-2 bg /home/quat/Pictures/Backgrounds/HighResScreenshot20190330-232312.png fill
+output DP-3 bg /home/quat/Pictures/Backgrounds/Screenshot20200626-18302400000.png fill
+
+# Display settings
+#output DP-1 disable
+output DP-1 scale 2 position 0,0
+output DP-2 mode 2560x1440@165Hz
+output DP-2 adaptive_sync on
+output DP-2 scale 2 position 1920,0
+output DP-3 scale 2 position 3200,0
+#output DP-2 scale 1 position 1920,0
+#output DP-3 scale 2 position 4480,0
+#output DP-3 disable
+#output Unknown-1 scale 2
+
+default_border none
+default_floating_border none
+font pango:monospace 0.001
+titlebar_padding 1
+titlebar_border_thickness 0
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# application hotkeys
+bindsym $mod+q exec xfce4-terminal
+bindsym $mod+e exec thunar
+#open specific applications in specific workspaces
+bindsym $mod+KP_Down exec zeditor
+bindsym $mod+KP_Next exec /opt/sublime_merge/sublime_merge
+bindsym $mod+KP_Begin exec deadbeef
+bindsym $mod+KP_Right exec obs
+bindsym $mod+KP_Home exec telegram-desktop
+bindsym $mod+KP_Up exec vesktop
+bindsym $mod+KP_Insert exec firefox
+
+#Screeshot Shortcut
+bindsym $mod+Shift+p exec sway-interactive-screenshot &
+
+# kill focused window
+bindsym $mod+c kill
+
+# Changing Window Focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+Shift+h split h
+
+# split in vertical orientation
+bindsym $mod+Shift+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+j layout toggle split
+bindsym $mod+PRINT exec grimshot copy area #grim -g "$(slurp -d)" - | wl-copy
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+Shift+a focus parent
+
+# focus the child container
+bindsym $mod+Shift+c focus child
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# reload the configuration file
+bindsym $mod+Ctrl+Shift+Home reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+Pause restart
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+
+#obtuse mouse settings (not working, too obtuse)
+input type:pointer {
+    accel_profile "flat"
+    pointer_accel 0.2
+}
+
+# Modes
+mode "resize" {
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+r mode "resize"
+
+exec /usr/lib/polkit-kde-authentication-agent-1
+exec mako
+exec swayidle -w timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
+
+#exec export XDG_CURRENT_DESKTOP=sway
+#exec --no-startup-id /usr/lib/xdg-desktop-portal -r
+#from xdg-desktop-portal-wlr github page
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
+include /etc/sway/config.d/*
