@@ -15,8 +15,11 @@ on-graphics-initialized = [
 ]
 
 show-bar = false
+show-titles = false
 idle.minutes = 10
 render-device.name = "3080 Ti"
+window-management-key = "Alt_L"
+repeat-rate = { rate = 25, delay = 500 }
 
 [[inputs]]
 tag = "mice"
@@ -27,7 +30,6 @@ accel-speed = 0.5
 
 [theme]
 border-width = 0
-title-height = 0
 
 [[drm-devices]]
 name = "3080 Ti"
@@ -103,7 +105,7 @@ alt-c = "close"
 alt-shift-f = "toggle-floating"
 
 # screenshot
-Print = { type = "exec", exec = ["grim","-g","$(slurp)","|","wl-copy"] }
+Print = { type = "exec", exec = { shell = "grim -g $(slurp) - | wl-copy", privileged = true } }
 
 # All actions above are so-called simple actions that are identified by
 # a string. More complex actions take parameters and are written as a table.

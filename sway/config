@@ -42,8 +42,8 @@ bindsym $mod+KP_Down exec zeditor
 bindsym $mod+KP_Next exec /opt/sublime_merge/sublime_merge
 bindsym $mod+KP_Begin exec deadbeef
 bindsym $mod+KP_Right exec obs
-bindsym $mod+KP_Home exec telegram-desktop
-bindsym $mod+KP_Up exec vesktop
+bindsym $mod+KP_Home exec Telegram
+bindsym $mod+KP_Up exec discord --ozone-platform-hint=auto --enable-features=UseOzonePlatform,VaapiVideoDecoder,VaapiIgnoreDriverChecks,AcceleratedVideoDecodeLinuxGL,AcceleratedVideoEncoder
 bindsym $mod+KP_Insert exec firefox
 
 #Screeshot Shortcut
