@@ -137,7 +137,7 @@ alt-KP_Up = { type = "exec", exec = [
 # The quit action terminates the compositor.
 alt-shift-e = "quit"
 # The reload-config-toml action reloads the TOML configuration file.
-alt-shift-r = "reload-config-toml"
+alt-Home = "reload-config-toml"
 
 # The switch-to-vt action switches to a different virtual terminal.
 ctrl-alt-F1 = { type = "switch-to-vt", num = 1 }
