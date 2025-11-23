@@ -28,6 +28,9 @@ transform-matrix = [[0.35, 0], [0, 0.35]]
 accel-profile = "flat"
 accel-speed = 0.5
 
+[color-management]
+enabled = true
+
 [theme]
 border-width = 0
 
@@ -40,29 +43,33 @@ name = "3060"
 match = { pci-vendor = 0x10de, pci-model = 0x2503 }
 
 [[outputs]]
-name = "left"
+name = "Left"
 match.serial-number = "352208"
 x = 0
 y = 0
 scale = 2
-vrr = { mode = "always" }
+vrr = { mode = "variant1" }
 
 [[outputs]]
-name = "center"
-match.serial-number = "#ASNXpqFioRXd"
+name = "UltraGear"
+match.serial-number = "507NTCZJJ475"
 x = 1920
 y = 0
 scale = 2
-vrr = { mode = "always" }
-mode = { width = 2560, height = 1440, refresh-rate = 165 }
+vrr = { mode = "never" }
+mode = { width = 3840, height = 2160, refresh-rate = 240 }
+# mode = { width = 1920, height = 1080, refresh-rate = 480 }
+color-space = "bt2020"
+transfer-function = "pq"
+format = "abgr2101010"
 
 [[outputs]]
-name = "right"
+name = "Right"
 match.serial-number = "205592"
-x = 3200
+x = 3840
 y = 0
 scale = 2
-vrr = { mode = "always" }
+vrr = { mode = "variant1" }
 
 # Shortcuts that are processed by the compositor.
 # The left hand side should be a key, possibly prefixed with modifiers.

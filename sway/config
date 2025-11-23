@@ -16,12 +16,19 @@ output DP-3 bg /home/quat/Pictures/Backgrounds/Screenshot20200626-18302400000.pn
 # Display settings
 #output DP-1 disable
 output DP-1 scale 2 position 0,0
-output DP-2 mode 2560x1440@165Hz
-output DP-2 adaptive_sync on
-output DP-2 scale 2 position 1920,0
-output DP-3 scale 2 position 3200,0
+output DP-2 {
+    mode 3840x2160@240Hz
+    position 1920,0
+    #adaptive_sync on
+    transform normal
+    scale 2
+    subpixel rgb
+    render_bit_depth 10
+    hdr on
+}
+output DP-3 scale 2 position 3840,0
 #output DP-2 scale 1 position 1920,0
-#output DP-3 scale 2 position 4480,0
+#output DP-3 scale 2 position 5760,0
 #output DP-3 disable
 #output Unknown-1 scale 2
 
