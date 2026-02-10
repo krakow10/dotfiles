@@ -118,7 +118,7 @@ Print = { type = "exec", exec = { shell = "grim -g $(slurp) - | wl-copy", privil
 # a string. More complex actions take parameters and are written as a table.
 # For example, the exec action spawns an application and has the exec field
 # that describes how to spawn the application.
-alt-q = { type = "exec", exec = "xfce4-terminal" }
+alt-q = { type = "exec", exec = "ghostty" }
 alt-e = { type = "exec", exec = "thunar" }
 alt-r = { type = "exec", exec = ["tofi-drun", "--drun-launch=true"] }
 alt-KP_Down = { type = "exec", exec = "zeditor" }
@@ -137,7 +137,7 @@ alt-KP_Up = { type = "exec", exec = [
 # The quit action terminates the compositor.
 alt-shift-e = "quit"
 # The reload-config-toml action reloads the TOML configuration file.
-alt-Home = "reload-config-toml"
+alt-shift-r = "reload-config-toml"
 
 # The switch-to-vt action switches to a different virtual terminal.
 ctrl-alt-F1 = { type = "switch-to-vt", num = 1 }
