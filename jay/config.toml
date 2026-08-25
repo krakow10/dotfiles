@@ -48,7 +48,7 @@ match.serial-number = "352208"
 x = 0
 y = 0
 scale = 2
-vrr = { mode = "variant1" }
+vrr = { mode = "never" }
 
 [[outputs]]
 name = "UltraGear"
@@ -69,7 +69,7 @@ match.serial-number = "205592"
 x = 3840
 y = 0
 scale = 2
-vrr = { mode = "variant1" }
+vrr = { mode = "never" }
 
 # Shortcuts that are processed by the compositor.
 # The left hand side should be a key, possibly prefixed with modifiers.
