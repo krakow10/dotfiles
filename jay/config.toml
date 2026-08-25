@@ -18,8 +18,9 @@ show-bar = false
 show-titles = false
 idle.minutes = 10
 render-device.name = "3080 Ti"
-window-management-key = "Alt_L"
+window-management-key = "Super_L"
 repeat-rate = { rate = 25, delay = 500 }
+unstable-mouse-follows-focus = true
 
 [[inputs]]
 tag = "mice"
@@ -76,40 +77,40 @@ vrr = { mode = "never" }
 # The right hand side should be an action.
 [shortcuts]
 # The focus-X actions move the keyboard focus to next window on the X.
-alt-h = "focus-left"
-alt-j = "focus-down"
-alt-k = "focus-up"
-alt-l = "focus-right"
+logo-h = "focus-left"
+logo-j = "focus-down"
+logo-k = "focus-up"
+logo-l = "focus-right"
 
 # The move-X actions move window that has the keyboard focus to the X.
-alt-shift-h = "move-left"
-alt-shift-j = "move-down"
-alt-shift-k = "move-up"
-alt-shift-l = "move-right"
+logo-shift-h = "move-left"
+logo-shift-j = "move-down"
+logo-shift-k = "move-up"
+logo-shift-l = "move-right"
 
 # The split-X action places the currently focused window in a container
 # and sets the split direction of the container to X.
-alt-d = "split-horizontal"
-alt-v = "split-vertical"
+logo-d = "split-horizontal"
+logo-v = "split-vertical"
 
 # The toggle-split action changes the split direction of the current
 # container.
-alt-t = "toggle-split"
+logo-t = "toggle-split"
 # The toggle-mono action changes whether the current container shows
 # a single window or all windows next to each other.
-alt-m = "toggle-mono"
+logo-m = "toggle-mono"
 # The toggle-fullscreen action toggles the current window between
 # windowed and fullscreen.
-alt-f = "toggle-fullscreen"
+logo-f = "toggle-fullscreen"
 
 # The focus-parent action moves the keyboard focus to the parrent of
 # the currently focused window.
-# alt-f = "focus-parent"
+# logo-f = "focus-parent"
 # The close action requests the currently focused window to close.
-alt-c = "close"
+logo-c = "close"
 # The toggle-floating action changes the currently focused window between
 # floating and tiled.
-alt-shift-f = "toggle-floating"
+logo-shift-f = "toggle-floating"
 
 # screenshot
 Print = { type = "exec", exec = { shell = "grim -g $(slurp) - | wl-copy", privileged = true } }
@@ -118,66 +119,69 @@ Print = { type = "exec", exec = { shell = "grim -g $(slurp) - | wl-copy", privil
 # a string. More complex actions take parameters and are written as a table.
 # For example, the exec action spawns an application and has the exec field
 # that describes how to spawn the application.
-alt-q = { type = "exec", exec = "ghostty" }
-alt-e = { type = "exec", exec = "thunar" }
-alt-r = { type = "exec", exec = ["tofi-drun", "--drun-launch=true"] }
-alt-KP_Down = { type = "exec", exec = "zeditor" }
-alt-KP_Next = { type = "exec", exec = "/opt/sublime_merge/sublime_merge" }
-alt-KP_Left = { type = "exec", exec = "firefox-nightly" }
-alt-KP_Begin = { type = "exec", exec = "deadbeef" }
-alt-KP_Home = { type = "exec", exec = "Telegram" }
-alt-KP_Prior = { type = "exec", exec = "obs" }
-alt-KP_Insert = { type = "exec", exec = "firefox" }
-alt-KP_Up = { type = "exec", exec = [
-    "discord",
+logo-q = { type = "exec", exec = "ghostty" }
+logo-e = { type = "exec", exec = "thunar" }
+logo-r = { type = "exec", exec = ["tofi-drun", "--drun-launch=true"] }
+logo-KP_Down = { type = "exec", exec = "zeditor" }
+logo-KP_Next = { type = "exec", exec = "/opt/sublime_merge/sublime_merge" }
+logo-KP_Left = { type = "exec", exec = "firefox-nightly" }
+logo-KP_Begin = { type = "exec", exec = "deadbeef" }
+logo-KP_Home = { type = "exec", exec = "Telegram" }
+logo-KP_Prior = { type = "exec", exec = "obs" }
+logo-KP_Insert = { type = "exec", exec = "firefox" }
+logo-KP_Up = { type = "exec", exec = [
+	"firejail",
+	"--net=enp6s0",
+	"--noprofile",
+    "vesktop",
     "--ozone-platform-hint=auto",
     "--enable-features=UseOzonePlatform,VaapiVideoDecoder,VaapiIgnoreDriverChecks,AcceleratedVideoDecodeLinuxGL,AcceleratedVideoEncoder"
 ] }
 
 # The quit action terminates the compositor.
-alt-shift-e = "quit"
+logo-shift-e = "quit"
 # The reload-config-toml action reloads the TOML configuration file.
-alt-shift-r = "reload-config-toml"
+logo-shift-r = "reload-config-toml"
 
 # The switch-to-vt action switches to a different virtual terminal.
-ctrl-alt-F1 = { type = "switch-to-vt", num = 1 }
-ctrl-alt-F2 = { type = "switch-to-vt", num = 2 }
-ctrl-alt-F3 = { type = "switch-to-vt", num = 3 }
-ctrl-alt-F4 = { type = "switch-to-vt", num = 4 }
-ctrl-alt-F5 = { type = "switch-to-vt", num = 5 }
-ctrl-alt-F6 = { type = "switch-to-vt", num = 6 }
-ctrl-alt-F7 = { type = "switch-to-vt", num = 7 }
-ctrl-alt-F8 = { type = "switch-to-vt", num = 8 }
-ctrl-alt-F9 = { type = "switch-to-vt", num = 9 }
-ctrl-alt-F10 = { type = "switch-to-vt", num = 10 }
-ctrl-alt-F11 = { type = "switch-to-vt", num = 11 }
-ctrl-alt-F12 = { type = "switch-to-vt", num = 12 }
+ctrl-logo-F1 = { type = "switch-to-vt", num = 1 }
+ctrl-logo-F2 = { type = "switch-to-vt", num = 2 }
+ctrl-logo-F3 = { type = "switch-to-vt", num = 3 }
+ctrl-logo-F4 = { type = "switch-to-vt", num = 4 }
+ctrl-logo-F5 = { type = "switch-to-vt", num = 5 }
+ctrl-logo-F6 = { type = "switch-to-vt", num = 6 }
+ctrl-logo-F7 = { type = "switch-to-vt", num = 7 }
+ctrl-logo-F8 = { type = "switch-to-vt", num = 8 }
+ctrl-logo-F9 = { type = "switch-to-vt", num = 9 }
+ctrl-logo-F10 = { type = "switch-to-vt", num = 10 }
+ctrl-logo-F11 = { type = "switch-to-vt", num = 11 }
+ctrl-logo-F12 = { type = "switch-to-vt", num = 12 }
 
 # The show-workspace action switches to a workspace. If the workspace is not
 # currently being used, it is created on the output that contains the pointer.
-alt-1 = { type = "show-workspace", name = "1" }
-alt-2 = { type = "show-workspace", name = "2" }
-alt-3 = { type = "show-workspace", name = "3" }
-alt-4 = { type = "show-workspace", name = "4" }
-alt-5 = { type = "show-workspace", name = "5" }
-alt-6 = { type = "show-workspace", name = "6" }
-alt-7 = { type = "show-workspace", name = "7" }
-alt-8 = { type = "show-workspace", name = "8" }
-alt-9 = { type = "show-workspace", name = "9" }
-alt-0 = { type = "show-workspace", name = "0" }
-# alt-F11 = { type = "show-workspace", name = "11" }
-# alt-F12 = { type = "show-workspace", name = "12" }
+logo-1 = { type = "show-workspace", name = "1" }
+logo-2 = { type = "show-workspace", name = "2" }
+logo-3 = { type = "show-workspace", name = "3" }
+logo-4 = { type = "show-workspace", name = "4" }
+logo-5 = { type = "show-workspace", name = "5" }
+logo-6 = { type = "show-workspace", name = "6" }
+logo-7 = { type = "show-workspace", name = "7" }
+logo-8 = { type = "show-workspace", name = "8" }
+logo-9 = { type = "show-workspace", name = "9" }
+logo-0 = { type = "show-workspace", name = "0" }
+# logo-F11 = { type = "show-workspace", name = "11" }
+# logo-F12 = { type = "show-workspace", name = "12" }
 
 # The move-to-workspace action moves the currently focused window to a workspace.
-alt-shift-1 = { type = "move-to-workspace", name = "1" }
-alt-shift-2 = { type = "move-to-workspace", name = "2" }
-alt-shift-3 = { type = "move-to-workspace", name = "3" }
-alt-shift-4 = { type = "move-to-workspace", name = "4" }
-alt-shift-5 = { type = "move-to-workspace", name = "5" }
-alt-shift-6 = { type = "move-to-workspace", name = "6" }
-alt-shift-7 = { type = "move-to-workspace", name = "7" }
-alt-shift-8 = { type = "move-to-workspace", name = "8" }
-alt-shift-9 = { type = "move-to-workspace", name = "9" }
-alt-shift-0 = { type = "move-to-workspace", name = "0" }
-# alt-shift-F11 = { type = "move-to-workspace", name = "11" }
-# alt-shift-F12 = { type = "move-to-workspace", name = "12" }
+logo-shift-1 = { type = "move-to-workspace", name = "1" }
+logo-shift-2 = { type = "move-to-workspace", name = "2" }
+logo-shift-3 = { type = "move-to-workspace", name = "3" }
+logo-shift-4 = { type = "move-to-workspace", name = "4" }
+logo-shift-5 = { type = "move-to-workspace", name = "5" }
+logo-shift-6 = { type = "move-to-workspace", name = "6" }
+logo-shift-7 = { type = "move-to-workspace", name = "7" }
+logo-shift-8 = { type = "move-to-workspace", name = "8" }
+logo-shift-9 = { type = "move-to-workspace", name = "9" }
+logo-shift-0 = { type = "move-to-workspace", name = "0" }
+# logo-shift-F11 = { type = "move-to-workspace", name = "11" }
+# logo-shift-F12 = { type = "move-to-workspace", name = "12" }
