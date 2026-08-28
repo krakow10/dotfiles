@@ -7,9 +7,26 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+	"diff_view_style": "unified",
+	"cli_default_open_behavior": "existing_window",
+	"project_panel": {
+		"dock": "left",
+	},
+	"outline_panel": {
+		"dock": "left",
+	},
+	"collaboration_panel": {
+		"dock": "left",
+	},
+	"git_panel": {
+		"dock": "left",
+	},
 	"show_edit_predictions": false,
 	"ssh_connections": [],
 	"agent": {
+		"show_turn_stats": true,
+		"play_sound_when_agent_done": "when_hidden",
+		"dock": "right",
 		"inline_assistant_model": {
 			"provider": "ollama",
 			"model": "gpt-oss:latest",
@@ -41,7 +58,7 @@
 		},
 		"default_model": {
 			"provider": "llama.cpp",
-			"model": "gpt-oss",
+			"model": "Qwen 3.8 27B",
 		},
 	},
 	"theme": "Mariana",
@@ -82,8 +99,8 @@
 				"api_url": "http://localhost:8080",
 				"available_models": [
 					{
-						"max_tokens": 32768,
-						"name": "gpt-oss",
+						"max_tokens": 65536,
+						"name": "Qwen 3.8 27B",
 					},
 				],
 			},
